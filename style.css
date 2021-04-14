@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+:root {
+	/* ### Primary */
+	--Desaturated-Red: hsl(0, 36%, 70%);
+	--Soft-Red: hsl(0, 93%, 68%);
+
+	/* ### Neutral */
+	--Dark-Grayish-Red: hsl(0, 6%, 24%);
+
+	/* ### Gradients */
+	/* - Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%) */
+	/* - Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%) */
+	--Font-size: 16px;
+	--Family: "Josefin Sans", sans-serif;
+	/* - Weights: 300, 400, 600 */
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: var(--Family);
+}
+
+html {
+	overflow-x: hidden;
+	font-size: var(--Font-size);
+	min-height: 100vh;
+	width: 100vw;
+	background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+	background-attachment: fixed;
+}
+body {
+	overflow-x: hidden;
+	font-size: var(--Font-size);
+	min-height: 100vh;
+	width: 100vw;
+	background: url(./images/hero-desktop.jpg) right top no-repeat;
+	background-size: contain;
+}
+
+.container {
+	background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+	background-attachment: fixed;
+}
+
+img {
+	max-width: 100%;
+}
+
+header .logo {
+	width: 7rem;
+	margin: 2rem 0 2rem 2rem;
+}
+
+.hero img {
+	width: 100%;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main h1 {
+	font-size: 3rem;
+	text-transform: uppercase;
+	font-weight: 600;
+	color: var(--Dark-Grayish-Red);
+	letter-spacing: 0.6rem;
+	line-height: 1.05;
+	text-align: center;
+	margin: 2.5rem 0 1rem 0;
+}
+
+main h1 span {
+	font-weight: 300;
+	color: var(--Desaturated-Red);
+}
+
+main .lead {
+	margin: 0rem 2.3rem 2.3rem 2.3rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	text-align: center;
+	color: var(--Desaturated-Red);
+}
+
+form {
+	position: relative;
+	width: 80%;
+	margin: 2rem auto;
+}
+.wrapper {
+	padding: 0 0 5rem 0;
+}
+input[type="text"] {
+	width: 100%;
+	background: transparent;
+	border-radius: 10000px;
+	height: 3rem;
+	padding-left: 1.5rem;
+	font-size: 1rem;
+	outline: none;
+	border: 0.09rem solid var(--Desaturated-Red);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	transition: all 0.1s ease;
+}
+
+input[type="text"].error {
+	border: 0.11rem solid var(--Soft-Red);
+}
+
+::placeholder {
+	color: var(--Desaturated-Red);
+}
+
+form div {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+}
+
+form div #error-icon {
+	width: 1.2rem;
+	margin-right: 0.5rem;
+	margin: auto 0.5rem auto 0;
+	user-select: none;
+	opacity: 0;
+	transition: all 0.1s ease;
+}
+
+form div #error-icon.error {
+	opacity: 1;
+}
+
+form div button {
+	display: inline-block;
+	border-radius: 10000px;
+	height: 3rem;
+	background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+	padding: 0 2rem;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	user-select: none;
+	transition: all 0.1s ease;
+}
+
+form div button:hover {
+	box-shadow: 0 15px 20px -3px var(--Desaturated-Red);
+}
+
+#error {
+	position: absolute;
+	left: 1.6rem;
+	top: 3.4rem;
+	color: var(--Soft-Red);
+	opacity: 0;
+	transition: all 0.1s linear;
+}
+
+#error.error {
+	user-select: none;
+	opacity: 1;
+}
+
+@media (min-width: 549px) {
+	.hero {
+		display: none;
+	}
+
+	body {
+		min-height: 100vh;
+	}
+
+	.container {
+		width: 61%;
+		min-height: 100vh;
+		min-width: 400px;
+		max-width: 850px;
+		background-attachment: fixed;
+		background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+	}
+
+	header .logo {
+		width: 10rem;
+		margin: 2rem 0rem 2rem 8vw;
+	}
+
+	main h1 {
+		text-align: left;
+		margin: 2.5rem 2rem 1rem 8vw;
+	}
+
+	main .lead {
+		width: 65%;
+		margin: 0rem 0rem 2.3rem 8vw;
+		text-align: left;
+	}
+
+	form {
+		width: 65%;
+		margin: 2rem 8vw;
+	}
+
+	form div button {
+		padding: 0 2.7rem;
+	}
+}
